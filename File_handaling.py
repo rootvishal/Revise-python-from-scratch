@@ -1,6 +1,34 @@
 #requirements
 import numpy as np
 import pandas as pd
+import mysql.connector as mysql
+
+database = mysql.connect(
+	host="localhost",
+	user="root",
+	password="vishal2003"
+
+),
+database.autocommit = True	#connect to the database
+cursor = database.cursor()					
+# Create a database
+cursor.execute("CREATE DATABASE IF NOT EXISTS file_handling_db")	
+# Use the database
+cursor.execute("USE file_handling_db")
+# Create a table	
+cursor.execute("CREATE TABLE IF NOT EXISTS file_handling_table (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), age INT)")
+# Insert data into the table
+cursor.execute("INSERT INTO file_handling_table (name, age) VALUES ('John Doe', 30)")
+cursor.execute("INSERT INTO file_handling_table (name, age) VALUES ('Jane Smith', 25)")			
+# Commit the changes
+database.commit()
+
+# File handling in Python
+
+
+
+
+	
 
 
 
