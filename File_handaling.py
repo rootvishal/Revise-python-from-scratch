@@ -1,3 +1,10 @@
+#requirements
+import numpy as np
+import pandas as pd
+
+
+
+
 print("Learning Python file handling...")
 # This is a simple Python script to demonstrate file handling
 def Load_the_file(m):
